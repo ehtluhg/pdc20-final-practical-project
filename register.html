@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AGUY - Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/Aguy Logo Dark.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="">
+    <nav class="navbar navbar-expand-lg m-3" style="background-color: #ffffff;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/Aguy Logo Red.png" alt="Aguy" width="25" height="25">
+                <span class="align-middle m-2" style="letter-spacing: 3px; font-weight: bolder;">AGUY</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        </div>
+    </nav>
+
+    <div class="container col-3">
+        <form name="name" onsubmit="return(validate());">
+
+            <!-- ng-hide Directive -->
+            <div ng-hide="toShow">
+                <small class="text-muted ">Step 1 of 2</small>
+
+                <h1 class="mt-2">Create Account</h1>
+
+                <div class="my-4">
+                    <label for="first-name" class="form-label">First Name</label>
+                    <input type="text" class="form-control shadow-none" id="first-name" ng-model="FirstName" required>
+                    <div class="error" id="firstNameErr"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="last-name" class="form-label">Last Name</label>
+                    <input type="text" class="form-control shadow-none" id="last-name" ng-model="LastName" required>
+                    <div class="error" id="lastNameErr"></div>
+                </div>
+
+                <div class="my-4">
+                    <small class="text-muted">By continuing, I understand and agree to the Aguy's Privacy Notice and <a
+                            href="#" style="color: #454545;"><u>Terms of Use</u></a> for creating an Aguy
+                        account.</small>
+                </div>
+
+                <div class="my-4 d-grid gap-2">
+                    <input class="btn btn-dark" ng-disabled="name.$invalid" type="button" ng-click="toShow=true"
+                        value="Next" style="font-weight: 500;">
+                </div>
+
+
+            </div>
+        </form>
+
+        <form name="second" action="index.html" onsubmit="return(validate());">
+
+            <!-- ng-show Directive -->
+            <div ng-show="toShow">
+
+                <small class="text-muted ">Step 2 of 2</small>
+
+                <h1 class="mt-2">Create Account</h1>
+
+                <div class="my-4">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control shadow-none" id="email-address" ng-model="Email" required>
+                    <div class="error" id="emailErr"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <a style="cursor: pointer;" data-bs-toggle="tooltip" data-bs-custom-class="password-tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-title="Password must be at least 8 characters and include at least one number and one letter"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-info-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path
+                                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                        </svg></a>
+
+                    <input type="password" class="form-control shadow-none" id="password" ng-model="Password" required>
+                    <div class="error" id="passwordErr"></div>
+                </div>
+
+                <div class="mb-5">
+                    <label for="password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control shadow-none" id="password" ng-model="ConfirmPassword"
+                        required>
+                    <div class="error" id="passwordErr"></div>
+                </div>
+
+                <div class="mt-2 d-grid gap-2">
+                    <input class="btn btn-dark" ng-disabled="second.$invalid" type="submit" value="Create Account"
+                        style="font-weight: 500;">
+                </div>
+
+                <script type="text/javascript" src="validation.js"></script>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+</body>
+
+</html>

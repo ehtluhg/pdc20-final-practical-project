@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AGUY - Sign In</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/Aguy Logo Dark.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat,500,600' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="">
+    <nav class="navbar navbar-expand-lg m-3" style="background-color: #ffffff;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/Aguy Logo Red.png" alt="Aguy" width="25" height="25">
+                <span class="align-middle m-2" style="letter-spacing: 3px; font-weight: 600;">AGUY</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        </div>
+    </nav>
+
+    <div class="container col-3">
+        <form name="login" onsubmit="return(validate());" action="index.html">
+            <h1 class="mt-5">Sign In</h1>
+            <div class="my-4">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control shadow-none" id="email-address" ng-model="email" required>
+                <div class="error" id="emailErr"></div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control shadow-none" id="password" ng-model="password" required>
+                <div class="error" id="passwordErr"></div>
+            </div>
+            <div class="my-4 d-grid gap-2">
+                <input type="submit" class="btn btn-dark" ng-disabled="login.$invalid" type="submit" value="Sign In" style="font-weight: 500;">
+            </div>
+
+            <script type="text/javascript" src="validation.js"></script>
+        </form>
+
+        <div id="or-section" class="my-5">
+            <span id="or-label">
+                Or
+            </span>
+        </div>
+
+        <div class="my-4 d-grid gap-2">
+            <a href="register.html" role="button" class="btn btn-light" type="button"
+                style="background-color: #efefef; font-weight: 500;">Create Account</a>
+        </div>
+    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    
+</body>
+
+</html>
