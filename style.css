@@ -4,6 +4,7 @@ body {
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    overflow-x: hidden;
 }
 
 @keyframes fadeInAnimation {
@@ -16,8 +17,36 @@ body {
     }
 }
 
-.background-image {
+ul a {
+    border-radius: 5%;
+}
+
+ul a:hover {
+    background-color: rgba(40, 40, 40, 0.089) !important;
+    border-radius: 7%;
+}
+
+ul a:focus {
+    background-color: rgba(40, 40, 40, 0.338) !important;
+    border-radius: 5%;
+}
+
+.landing-page {
     background: url(assets/img/landing-page/1.jpg);
+
+    min-height: 1120px;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Needed to position the navbar */
+    position: relative;
+}
+
+.interior-page {
+    background: url(assets/img/landing-page/2.jpg);
 
     min-height: 1120px;
 
@@ -86,4 +115,4 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-  }
+}
